@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>More Histograms</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div class="container px-4">
+                <a class="navbar-brand" href="{{url_for('index')}}">Back to Main Page</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#histogram">Histograms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class= "masthead" style="background-image: url('https://img.freepik.com/premium-vector/business-graph-chart-investment-trading-blue-background_62391-236.jpg'); color: white;">
+                  <a name="top"></a>
+            <div class="container px-4 text-center">
+              <h1 class="fw-bolder"><u>Our Graphs</u></h1>
+            </div>
+        </header>
+        <!-- Histogram section-->
+        <section id="histogram">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>More Histograms:</h2>
+                        <iframe width="750" height="500" title="Satisfaction Amounts" src="{{url_for('static', filename='plots/satisfaction_hist.html')}}"></iframe>
+                      <p class="descript-text">
+                        The amount of people who were either satisfied, or neutral/dissatisfied. The lean to neutral/dissatisfied is most likely due to the fact it encompasses 2 options.
+                      </p>
+                      <iframe width="750" height="500" title="Age Overlay Histogram" src="{{url_for('static', filename='plots/age_overlay_histogram.html')}}"></iframe>
+                      <p class="descript-text">
+                        Shows the amount of people who were either satisfied or neutral/dissatisfied, and how old they are. people at the age of 25 are 2 times more likely to be neutral/dissatisfied. Ages 7-38 and 61-85 are more likely do be neutral/dissatisfied with their flight, and ages 39-60 are more likely to be satisfied with their flight. This is likely due to several factors. the early range is probably due to a lack of money and the late range is likely due to people becoming grump with age. The middle range probably consists of people who have enough money to take the flights, and are young enough to fully enjoy their time wherever they are.
+                      </p>
+<iframe width="750" height="500" title="Flight Distance Histogram" src="{{url_for('static', filename='plots/distance_hist.html')}}"></iframe>
+<p class="descript-text">
+The distance of a flight and whether a person was satisfied or neutral/dissatisfied. The main thing to note is that more people enjoy the later flights. This is likely because almost all long distance flights are taken in business class and business class people tend to enjoy their flight.
+                      </p>                        <iframe width="750" height="500" title="Arrival Delay Histogram" src="{{url_for('static', filename='plots/delay_hist.html')}}"></iframe>
+                      <p class="descript-text">
+                        This graph shows the arrival delay, and the amount of people who were satisfied or didn't enjoy their flight. This shows that if the delay was shorter, then there's a a higher chance you will be dissatisfied with it than if the delay was longer.
+                      </p>
+                      <iframe width="750" height="500" title="Customer Type" src="{{url_for('static', filename='plots/customer_type.html')}}"></iframe>
+                      <p class="descript-text">
+                        Whether a customer is loyal and disloyal and whether they were satisfied, or neutral/dissatisfied. There is a 3 times greater chance for disloyal customers to be neutral/dissatisfied. Loyal customers have a slight lean to being more neutral/dissatisfied, but that is likely due to us having more neutral/dissatisfied customers than satisfied customers.
+                      </p>
+                      <br>
+        <!-- Footer-->
+            <a href="{{url_for('index')}}">
+                          <button class="button1">Click Here To Return To The Main Area</button>
+                          </a>
+                      <br>
+                 </div>
+              </div>
+          </div>
+      </section>
+       <footer class="py-5 bg-dark">
+            <div class="container px-4"></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+  </body>
+</html>

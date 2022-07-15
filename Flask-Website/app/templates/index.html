@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Airline Satisfaction Predictor</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container px-4">
+                <a class="navbar-brand" href="https://www.ai-camp.org">A.I. Camp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#use">Use</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#charts">Charts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#machine-learning">Machine Learning</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#conclusion">Conclusion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">The Team</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="masthead" style="background-image: url('https://image.cnbcfm.com/api/v1/image/104780481-IMG_6947-1.jpg?v=1508335390'); color: white;">
+          <div class="container">
+          <div class="container px-4 text-center">
+            <h1 class="fw-bolder"><u>Predicting Airline Satisfaction</u></h1>
+              <p class="lead">Finding out whether someone did or did not enjoy their flight with machine learning!</p>
+            </div>
+           </div>
+        </header>
+        <!-- About section-->
+        <section class="bg-light" id="about">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>What is our website about?</h2>
+                        <p class="lead">Our team created a website to show how we can predict whether a passenger was satisfied or not on an airplane with visualizations and models. </p>
+                      </div>
+                 </div>
+              </div>
+          </section>
+         <!--Use section-->
+         <section id="use">
+           <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                       <h2>What did we use?</h2>
+                        <p class="lead">For our project we used:</p>
+                          <ul class ="lead">
+                          <li>Kaggle for our dataset: <a href="https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction">Our Dataset</a></li>
+                          <li>Python as our coding language.</li>
+                          <li>Pandas to make our dataset usable to code.</li>
+                          <li>Plotly to make visualizations.</li>
+                          <li>SKLearn for our machine learning.</li>
+                          <li>HTML in order to make this website!</li>
+                        </ul>
+                      </div>
+                  </div>
+             </div>
+              </section>
+        <!-- Charts section-->
+        <section class="bg-light" id="charts">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                      <h2>Charts:</h2>
+                      <iframe width="750" height="500" title="Pie On-Board Service" src="{{url_for('static', filename='plots/obs_pie.html')}}"></iframe>
+                      <p class="descript-text">
+                       This chart is showing the percentage of ratings that people chose and whether they were satisfied or not. In the satisfied chart very little people chose 1, 2, or 3, while in the dissatisfied chart the ratings are more even, and less people chose 5. With this information we can conclude that people tend to see on-board service as important and will most likely be satisfied if it were a 4 or 5. That is why more people tended to be more satisfied with their flight when they rated it a 4 or 5.
+                      </p>
+                      <br>
+                       <html>    
+                        <body> 
+                          <a href="{{url_for('pie_charts')}}"> 
+                          <button class="button1">Click Here For More Pie Charts</button>
+                          </a>
+                        </body>    
+                      </html>
+                      <p><br></p>
+
+                        <body>
+                          <iframe width="750" height="500" title="Class Satisfaction" src="{{url_for('static', filename='plots/class_satisfaction_hist.html')}}"></iframe>
+                      <p class="descript-text">
+                      This histogram is showing the amount of people who were satisfied or dissatisfied with their flight in a specific class. There were more people who were satisfied with their flight in the Business Class than people who were dissatisfied in that class and in the other classes. The Eco and Eco Plus Class however had a complete opposite effect. More people were dissatisfied with both classes than people who were satisfied in those classes and in the Business Class. This would make sense since the Business Class has the greatest number of perks.</p>
+                       <br>
+                                                  </body>    
+
+                       <html>    
+                        <a href="{{url_for('histograms')}}">
+                          <button class="button1">Click For More Histograms</button>
+                        </a>
+                      </html>
+                      <p><br></p>
+                      <iframe width="750" height="500" title="Type/Flight Box Plot" src="{{url_for('static', filename='plots/flight_distance_tt.html')}}"></iframe>
+                  <p class="descript-text">
+                   Shows the amount of people who are satisfied based on whether they go business or personal. More people are satisfied when they go business.
+                  </p>
+                      <iframe width="750" height="500" title="Gender Age" src="{{url_for('static', filename='plots/gender_age.html')}}"></iframe>
+                  <p class="descript-text">
+                    This shows the age and gender of people who are satisfied and unsatisfied. Women and men have the same amount of satisfaction. On average, people aged 25-50 are the most commonly unsatisfied while people aged 32-51 on average are satisfied. Older people have more satisfaction in general.
+                  </p>
+
+                      <iframe width="750" height="500" title="Age/Class Box Graph" src="{{url_for('static', filename='plots/box_graph_age_class.html')}}"></iframe>
+                      <p class="descript-text">
+                        Shows the average ages for people in a class and whether they were satisfied or neutral/dissatisfied. From the graph, we can determine that people are less satisfied in the Eco and Eco Plus class and more satisfied in the Business Class because the dissatisfied boxes for Eco and Eco Plus are higher than their satisfied boxes. In contrast, the satisfied box for Business is higher than its dissatisfied box. This would make sense since the Business class has more perks and raises satisfaction levels for people. In this graph, we see the distribution of ages across the different classes. We see that across all of the different classes age doesn't really change that much.
+                      </p>
+
+                      <iframe width="750" height="500" title="Delay Convenience" src="{{url_for('static', filename='plots/delay+convinience_scat.html')}}"></iframe>
+                  <p class="descript-text">
+                    Shows the correlation between satisfied and unsatisfied customers in an arrival and departure delay. The longer a delay occurs, the more customers become dissatisfied.
+                  </p>
+
+                      <iframe width="800" height="752" title="Scatter Matrix" src="{{url_for('static', filename='plots/scatter_matrix_resized.html')}}"></iframe>
+                      <p class="descript-text">
+                        Takes various variables and plots each one. From the selected variables, the only ones that correlate are Departure Delay and Arrival Delay, but this doesn't give us any new information.
+                      </p>
+                      <iframe width="800" height="752" title="Correlation Matrix" src="{{url_for('static', filename='plots/correlation_matrix_resized.html')}}"></iframe>
+                      <p class="descript-text"> 
+                        The amount each of our variables correlate. The closer to 0 the less the correlation, the closer to 1 the correlation increases positively, and the closer to -1 the correlation increases negatively. Most of our variables don't really correlate. The only column/row we care about is the satisfaction column/row. Most of them don't really correlate but Online Boarding and Business Class have a .5 correlation.
+                      </p>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <section id="machine-learning">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Machine Learning</h2>
+                        <p class="lead">
+                          In order to make accurate predictions, we tested a variety of machine learning models. They each functioned differently and used different methods to make predictions, generating a variety of outcomes. Since we are solving a classification problem (determining one outcome or the other), we used models that are meant for classification problems. We used four metrics: precision, recall, accuracy, and f-1 score to compare the effectiveness of each model at making predictions, and we’ll refer to these collectively as PRAF. We also used a process called hyperparameter tuning (through a function called GridSearchCV) to improve each model’s “base performance”, sort of like getting the model familiar with how the data would be organized before it started processing.
+                        </p>
+                      <br>
+                      <h2>Machine Learning Models:</h2>
+                      <h3>1.) Random Forest Model</h3>
+                        <p class="descript-text">
+                          A Random Forest model is a model that generates a given number of randomized decision trees and uses averaging functions to combine its results from the trees and make predictions on the data. This allows for more accurate predictions as randomizing decision trees allows the model to individually look for correlations between sections of the dataset, making predictions more intuitive, compared to looking at the entire dataset through one decision tree, as it is harder to find patterns when there are more variables to consider. <br> <br> Through hyperparameter tuning, we found that a larger number of trees correlated to a more accurate result, though by ~30 trees, the increase in accuracy was negligible compared to the amount of added processing time the model took. After hyperparameter tuning, the Random Forest model was quite effective in making predictions based on our data. It had a PRAF of ~0.95, meaning that it was making accurate predictions 95% of the time.
+                        </p>
+                        <figure>
+                          <img width = "600px" height = "350px" src= "https://www.tibco.com/sites/tibco/files/media_entity/2021-05/random-forest-diagram.svg">
+                          <figcaption>Image courtesy of <a href="https://www.tibco.com/reference-center/what-is-a-random-forest">Tibco</a></figcaption>
+                        </figure>
+                      <br>
+                        <h3>2.) Categorical Naive Bayes Model</h3>
+                        <p class="descript-text">
+                          The Categorical Naive Bayes model works using the Bayes Theorem, an algorithm that assigns probabilities to individual features and uses those probabilities to predict an outcome. It assumes that individual features are dependent on each other, which works well with our dataset. We chose the Categorical Naive Bayes model because it works best for categorical data and we have a lot of categorical data in the form of 1-5 ratings for the airline's performance. <br> <br> During hyperparameter tuning, we found that an alpha (a factor that smooths the data for outliers) value of 3 seemed to slightly improve the model, but further increases in alpha didn't make a significant difference. After hyperparameter tuning, the Categorical Naive Bayes model had a PRAF of ~0.9, meaning that it was making accurate predictions around 90% of the time.
+                        </p>
+                        <figure>
+                          <img width = "600px" height = "350px" src="https://luminousmen.com/media/data-science-bayes-theorem-2.jpg">
+                          <figcaption>Image courtesy of <a href="https://luminousmen.com/post/data-science-bayes-theorem">luminousmen</a></figcaption>
+                        </figure>
+                      <br>
+                      <h3>3.) Decision Tree Model</h3> 
+                      <p class="descript-text">
+                        A Decision Tree Classifier uses the given data to generate a decision tree, a group of “questions” that make up several paths to different outcomes. For each prediction, the decision tree uses the testing data to answer these “questions” and follows a path based on its answers. Upon reaching a set depth, or length of the path, the model then produces a prediction based on the path it followed. <br> <br> Through hyperparameter tuning, we found that a maximum depth of 4 and a minimum sample leaf (a value that requires a set amount of training data before the model can create a “question”) of 5 were the most effective hyperparameters for our data. After hyperparameter tuning, the Decision Tree Classifier model had a PRAF of ~0.92, meaning that it was making accurate predictions around 92% of the time.
+                      </p>
+                      <figure>
+                        <img src="{{url_for('static', filename='assets/tree.jpg')}}" alt="Decision Tree Diagram" width = "600px" height = "350px">
+                        <figcaption>Image from model output.</figcaption>
+                      </figure>
+                      <br>
+                      <h3>4.) K-Nearest Neighbors Model</h3> 
+                      <p class="descript-text">
+                        A K-Nearest Neighbors model is a classification model that works by finding the distance between a piece of testing data and all the training data in the dataset. A k-value is used to find the k-number of closest training data points. The model finds which class the majority of the k-closest data points are in, and classifies the testing data point to that class. <br> <br> Through hyperparameter tuning, we found that a k-value of 3 works best, and weighting the data (assigning different “priorities” to each data point based on a certain factor) based on their distance from the testing point was most effective. After hyperparameter tuning, the K-Nearest Neighbors model had a PRAF of ~0.63, meaning that it was not making a lot of accurate predictions around 63% of the time, which is not very good.
+                      </p>
+                      <figure>
+                        <img src="https://miro.medium.com/max/1000/0*zCnwFe1zL2tGN5oi.png" width="600px" height="350px">
+                        <figcaption>Image courtesy of <a href="https://medium.com/swlh/k-nearest-neighbor-ca2593d7a3c4">Antony</a></figcaption>
+                      </figure>
+                      <br>
+                      <h3>5.) AdaBoost Classifier Model</h3> 
+                      <p class="descript-text">
+                        The AdaBoost Classifier model makes a bunch of smaller, “weak learning” models that perform about as good as random guessing. After each weak learning model is made, it makes predictions on the testing data, and the predictions that the model gets wrong are given a heavier weight, meaning that the next weak learning model will focus on getting that prediction right. After creating a bunch of these weak learning models, the classifier combines all the results of the models to create a majority result that is used to make the final predictions. <br> <br> We didn’t perform hyperparameter tuning on this model, so our results used the default hyperparameters. The AdaBoost Classifier model had a PRAF of ~0.93, which is actually pretty good for an untuned model, predicting accurately around 93% of the time.
+                      </p>
+                      <figure>
+                        <img src="https://scikit-learn.org/stable/_images/sphx_glr_plot_adaboost_hastie_10_2_001.png" alt="Naive Bayes Diagram"width = "600px" height = "350px">
+                        <figcaption>Image courtesy of <a href="https://scikit-learn.org/stable/modules/ensemble.html#adaboost">SKLearn</a></figcaption>
+                      </figure>
+                      <br>
+                      <h3>6.) Logistic Regression Model</h3> 
+                      <p class="descript-text">
+                        The Logistic Regression model is a classification model despite its name, and it works by creating a logistic function to match the dataset that is given to it. This logistic function determines probabilities, and when testing data is placed on the graph of the function, the position of the testing data outputs a probability that the model uses to make a prediction. <br> <br> We didn’t perform hyperparameter tuning on this model because there wasn’t much to tune. The Logistic Regression model has a PRAF of ~0.8, which means that it predicts accurately around 80% of the time.
+                      </p>
+                      <figure>
+                        <img src="https://static.packt-cdn.com/products/9781788399906/graphics/assets/06e797f4-9584-46f6-8915-d1177426c2bb.png" width="600px" height="350px">
+                        <figcaption>Image courtesy of <a href="https://subscription.packtpub.com/book/data/9781788399906/5/ch05lvl1sec39/logistic-regression-model-building-and-training">Packt</a></figcaption>
+                      </figure>
+                      <br>
+                      <h3>7.) Stochastic Gradient Descent Model</h3> 
+                      <p class="descript-text">
+                        A Stochastic Gradient Descent model is a classification model that optimizes how another model works. The model adds more regression or classification functions underneath the model it chooses to optimize, which makes predictions more accurate in some cases. <br> <br> Using hyperparameter tuning, we found that the best base model to apply optimizations to was the logarithmic loss function. The Stochastic Gradient Descent model had a PRAF of ~0.82, meaning that is predicts accurately around 82% of the time.
+                      </p>
+                      <figure>
+                        <img src="https://www.mltut.com/wp-content/uploads/2020/04/Untitled-document-3.png" width="600px" height="350px">
+                        <figcaption>Image courtesy of <a href="https://www.mltut.com/stochastic-gradient-descent-a-super-easy-complete-guide/">MLTut</a></figcaption>
+                      </figure>
+                      <br>
+                      <h2>Results:</h2>
+                      <p class="descript-text">Below is a graph that lists the metrics for each model we tried. Model names with "grid" are models that we used GridSearchCV with and saw major changes.</p>
+                      <iframe width="800" height="325" title="Results Chart" src="{{url_for('static', filename='plots/scores.html')}}"></iframe>
+                      <ul class="descript-text">
+                        <li>The Random Forest model did the best in all of the fields with a score of 95% for accuracy an 94% for recall, precision, and f1 score.</li>
+                        <li>The K-Nearest Neighbors model performed the worst in accuracy, recall, and f1 score, averaging scores in the low 60%’s. The SGD model without hyperparameter tuning performed the worst in precision.</li>
+                        <li>The Random Forest model did a good job of predicting because it’s scores are very high (90%+ for all metrics). Therefore we think our model would work well for classifying if a passenger was satisfied or not satisfied. We noticed as well that the models that are performing well are all tree based. Categorical Naive Bayes, SGD, and Logistic Regression are all mid tier models and performed very well in the 80 range for all scores but they did not outperform the best model in any fields.</li>
+                        <li>The grid search improved the SGD model but it did not help the Decision Tree model. SGD had a higher recall score which means that it had less false negatives (predicted 0 and was actually 1) then the grid search model. This means that the grid search model is being too aggressive and saying too many things are negative.</li>
+                        <li>The grid search for the Decision Tree model hurt the model and there are a couple explanations we have for that. One answer is that when training these models, there’s variance so that means that the decision trees can be more optimized or less optimized which means we might have a bad decision tree. Our grid search probably wasn’t expansive enough and so we’d want to try to look at more values for our parameters.</li>
+                    </ul>
+                    <br>
+                    <h2>Try it Yourself:</h2>                    
+<form action="" method="post">
+  
+  <label for="Age">Age</label>
+  <input type="text" name="Age" placeholder="Age" required="required" class = "form-text"/>
+  <br>
+  
+   <label for="Flight Distance">Flight Distance</label>
+  <input type="text" name="Flight Distance" placeholder="Flight Distance" required="required" class = "form-text"/>
+  <br>
+  
+  <label for="Inflight wifi service">Inflight Wifi Service</label>
+  <select id="Inflight wifi service" name="Inflight wifi service" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Departure/Arrival time convenient">Departure/Arrival Time Convenient</label>
+  <select id="Departure/Arrival time convenient" name="Departure/Arrival Time Convenient" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Ease of Online booking">Ease of Online Booking</label>
+  <select id="Ease of Online booking" name="Ease of Online booking" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Gate location">Gate Location</label>
+  <select id="Gate location" name="Gate Location" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Food and drink">Food and Drink</label>
+  <select id="Food and drink" name="Food and Drink" required="required" class="form-select">
+        <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+    <label for="Inflight service">Inflight Service</label>
+  <select id="Inflight Service" name="Inflight Service" required="required" class="form-select">
+      <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+    </select>
+  <br>
+  
+  <label for="Online boarding">Online Boarding</label>
+  <select id="Online boarding" name="Online Boarding" required="required" class="form-select">
+        <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Seat comfort">Seat Comfort</label>
+    <select id="Seat Comfort" name="Seat comfort" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Inflight entertainment">Inflight Entertainment</label>
+  <select id="Inflight entertainment" name="Inflight Entertainment" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+      </select>
+  <br>
+  <label for="On-board service">On-Board Service</label>
+  <select id="On-board service" name="On-board service" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Leg room service">Leg Room Service</label>
+  <select id="Leg room service" name="Leg room service" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Baggage handling">Baggage Handling</label>
+  <select id="Baggage handling" name="Baggage handling" required="required" class="form-select">
+    <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+    </select>
+  <br>
+  <label for="Checkin service">Check In Service</label>
+  <select id="Checkin service" name="Checkin service" required="required" class="form-select">
+      <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+    </select>
+  <br>
+
+  <label for="Cleanliness">Cleanliness</label>
+  <select id="Cleanliness" name="Cleanliness" required="required" class="form-select">
+      <option value="" disabled selected hidden>Rate it from 1-5:</option>
+    <option value='0'>1</option>
+    <option value='1'>2</option>
+    <option value='2'>3</option>
+    <option value='3'>4</option>
+    <option value='4'>5</option>
+  </select>
+  <br>
+  <label for="Departure Delay in Minutes">Departure Delay in Minutes</label>
+  <input type="text" name="Departure Delay in Minutes" placeholder="Departure Delay in Minutes" required="required" class = "form-text" />
+  <br>
+  <label for="Arrival Delay in Minutes">Arrival Delay in Minutes</label>
+  <input type="text" name="Arrival Delay in Minutes" placeholder="Arrival Delay in Minutes" required="required" class = "form-text"/>
+  <br>
+  
+  <label for='Gender'>Gender</label>
+  <select id='Gender' name='Gender' required="required" class="form-select">
+  <option value="" disabled selected hidden>Select Your Gender:</option>
+  <option value='0'>Male</option>
+  <option value='1'>Female</option>
+  </select>
+  <br>
+  
+  <label for="Customer Typ  e">Customer Type</label>
+  <select id="Customer Type" name="Customer Type" required="required" class="form-select">
+    <option value="" disabled selected hidden>Select Your Customer Type:</option>
+    <option value='0'>Disloyal Customer</option>
+    <option value='1'>Loyal Customer</option>
+  </select>
+  <br>
+  <label for="Type of Travel">Type of Travel</label>
+  <select id="Type of Travel" name="Type of Travel" required="required" class="form-select">
+    <option value="" disabled selected hidden>Select your travelt ype:</option>
+    <option value='0'>Personal</option>
+    <option value='1'>Business</option>
+  </select>
+  <br>  
+    <label for="Class Eco">Class Eco</label>
+  <select id="Class Eco" name="Class Eco" required="required" class="form-select">
+    <option value="" disabled selected hidden>Select Your Class:</option>
+    <option value='0'>No I didn't have eco</option>
+    <option value='1'>Yes Eco</option>
+  </select>
+  <br>
+  
+    <label for="Class Eco Business">Class Business</label>
+    <select id="Class Business" name="Class Business" required="required" class="form-select">
+    <option value="" disabled selected hidden>Select Your Class:</option>
+    <option value='0'>No</option>
+    <option value='1'>Yes I had business class</option>
+  </select>
+<br>
+  
+  <label for="Class Eco Plus">Class Eco Plus</label>
+    <select id="Class Eco Plus" name="Class Eco Plus" required="required" class="form-select">
+    <option value="" disabled selected hidden>Select Your Class:</option>
+    <option value='0'>No</option>
+    <option value='1'>Yes Plus</option>
+  </select>
+  <br>
+
+  <br>
+
+  <br>
+     <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-left: 525px; text-align:center" href="{{url_for('predict')}}">Predict</button>
+                      </form>
+ <br>
+ {% if prediction_text %}
+ <p class= "lead" style="margin-left:700px; margin-top: 2rem;"><b>
+   If 1 is satisfied, 0 is unsatisified. Predicted value:  {{ prediction_text }}!
+       </b> </p>
+
+{% endif %}
+                    </div>
+                </div>
+             </div>
+        </section>
+        <!-- Conclusion section-->
+        <section class = "bg-light" id="conclusion">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2>Conclusion:</h2>
+                        <p class="descript-text">
+For our project, we wanted to create a machine learning model that could predict whether someone enjoyed their flight or not and determine which aspects of a flight experience are most important to customers. <br> <br>
+
+As a first step, we created visualizations of our data in order to better understand the data ourselves and help other people understand it as well. Using plotly, we made many different types of visualizations, such as matrices, histograms, bar graphs, scatter plots, and pie charts. Our team also used seaborn to create other graphs like correlation matrices. We then analyzed the information, wrote about what we could conclude from it, and discussed what we thought was happening (correlations, patterns, etc.). <br> <br>
+
+To make predictions based on the data, we used many different machine learning models. To make these models effective, we needed to learn how to do hyperparameter tuning. In fact, almost everything we accomplished throughout the project was something we had to learn from scratch. Most of us came in with little to no coding knowledge, and this caused many issues but we managed to solve all of them in the end. We used GridSearchCV to find out the best parameters for our models. After we made and tuned all of them, we compared them to figure out some issues, explore what we could work to improve, and finally decide on the best model, which was the random forest. <br> <br>
+
+In the end, we succeeded after a lot of hard work and effort. We had made a model with .95 accuracy and concluded that class and online boarding play major roles in one's satisfaction. We used survey data to help determine important factors in airline satisfaction, but there are several things wrong with survey data. Most of the responses were subjective, meaning that there could be bias, and there are many small variables the airline may have no control over that could affect a rating. If we wanted to make a more objective model, we would ask if people were satisfied or not, and then look for concrete statistics such as leg room in centimeters, or find the airline that they flew in: various things that we can measure and that are constant throughout all flights. We could then judge what factors are most important more easily.
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Team section-->
+        <section id="team">
+            <div class="container px-4">
+                <div class="row gx-4 justify-content-center">
+                    <div class="col-lg-8">
+                      <h2>Frenzied Physicists</h2>
+                      <p class="lead">Meet the team who built these visualizations and models!</p>
+                       <h4>Anthony</h4>
+                      <p class="descript-text">Hi my name is Anthony Campbell, I’m 22, and I’m currently in Amherst, Massachusetts. I’ve graduated with a double major in Computer Science and Statistics and I currently am earning my master’s in Computer Science with a concentration with Data Science. I’ve had the wonderful experience to lead this amazing team to build an incredible product. They’ve accomplished so much in 3 weeks: learning python from scratch, preprocessing data, implementing machine learning models, and learning how to build a website. I’m glad I can share my passion for AI and Data Science as well as my knowledge! Great job you guys and I wish you all the best! </p>
+                      <h4>Andrea</h4>
+                      <p class="descript-text">Hi! My name is Andrea Mireles, and I’m a junior at MSMS. This is my first time coding and creating a website. I was the co-designer of this website, made a few graphs like the box and whisker plot for gender and age satisfaction, and I helped write out the descriptions of our visualizations. I’ve learned so much at A.I. Camp, and I'am very happy that I spent the summer learning more about programming and A.I.!</p>
+                      <h4>Angela</h4>
+                      <p class="descript-text">I'm Angela, I'm a junior in high school in Cypress, Texas and this is my first time coding. I learned a lot from this experience in a very short time span, and met a lot of interesting people. I built parts of the histograms and box plots, and also wrote the descriptions for some of the visualizations with help from the rest of the team. </p>
+                      <h4>Ishani</h4>
+                      <p class="descript-text">Hi, my name is Ishani Eniyan. I’m 15 and I'm from Texas. I have always liked coding and working with computers. These past 3 weeks have taught me so much about how to code better and more efficiently. I’m really glad I got to learn all about AI, data science and machine learning. I worked on developing and describing visualizations.</p>
+                      <h4>Isaac</h4>
+                      <p class="descript-text">My name is Isaac Mallory, I am 17 and from Cincinnati, Ohio. I have always had an interest in programming but didn't actually start until a year ago and this program has helped me increase my skills a lot. I developed some of the visualizations , wrote descriptions for them, and made the pie chart part of the website.</p>
+                      <h4>Ivan</h4>
+                      <p class="descript-text">Hello, my name is Ivan, I'm 15 and from Maryland. These past three weeks at AI Camp have been really enjoyable, and I'm glad I got to learn more about AI and data science! I made some of the graphs and machine learning models that we used, such as the SGD and Random Forest model, as well as all the explanations for those models on this website.</p>
+                      <h4>Sebastian</h4>
+                      <p class="descript-text">I'm Sebastian. I have always been interested in computers. I decided to take AI Camp so I can start going into a more specific field and start training in it. While I was here a learn a lot and improved my coding skills and knowledge. I made a few of the visualizations and I build and tuned the Decision Tree.
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="py-5 bg-dark">
+            <div class="container px-4"></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="static/js/scripts.js"></script>
+    </body>
+</html>
